@@ -5,3 +5,20 @@ Desenvolver a camada de modelos de um sistema de arquivos persistido em um banco
 A soluçãos deverá ser escrita majoritariamente em Ruby com framework Ruby on Rails.
 
 Realizar um fork deste repositório.
+
+## Diagrama
+
+```plantuml
+Folder "1" *-- "0..*" Folder
+Folder "1" *-- "0..*" File
+
+class Folder {
+  folder: Folder
+  label: string
+}
+
+class File {
+  folder: Folder
+  file: Attachment
+}
+```
