@@ -11,14 +11,29 @@ Realizar um fork deste repositório.
 ```plantuml
 Folder "1" *-- "0..*" Folder
 Folder "1" *-- "0..*" File
+Folder "1" *-- "0..*" ActiveStorageAttachment
 
 class Folder {
   folder: Folder
+  files: ActiveStorageAttachment[]
+
   label: string
 }
-
-class File {
-  folder: Folder
-  file: Attachment
-}
 ```
+
+## Exemplos
+
+Para ver e realizar as request importar o arquivo `Clicksign.postman_collection.json` no Postman
+
+## Variáveis de Amabiente
+
+| VAR           | Descrição                            | Exemplo                       |
+|---------------|--------------------------------------|-------------------------------|
+| RAILS_ENV     | Ambiente que o rails está executando | `development` ou `production` |
+| DATABASE_USER | Usuário de conexão com o postgres    | postgres                      |
+| DATABASE_PASS | Senha de conexão com o postgres      | `****`                        |
+| DATABASE_HOST | Ip ou dns de conexão                 | 11.11.111.1                   |
+| DATABASE_PORT | Porta de conexão                     | 5432                          |
+
+
+Também estão no arquivo `.env.development`

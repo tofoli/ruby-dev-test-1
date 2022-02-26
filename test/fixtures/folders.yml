@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+boot:
+  label: boot
+
+home:
+  label: home
+
+clicksign:
+  folder: home
+  label: clicksign
+
+images:
+  folder: clicksign
+  label: Images
+
+documents:
+  folder: clicksign
+  label: Documents
+
+videos:
+  folder: clicksign
+  label: Videos

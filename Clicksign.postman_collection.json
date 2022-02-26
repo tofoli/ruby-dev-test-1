@@ -1,0 +1,236 @@
+{
+	"info": {
+		"_postman_id": "3eaf9637-31ef-4e95-a8b8-e4c08b41cdaf",
+		"name": "Clicksign",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Folder",
+			"item": [
+				{
+					"name": "Files",
+					"item": [
+						{
+							"name": "Files - List",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/folders/:folder_id/files",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"folders",
+										":folder_id",
+										"files"
+									],
+									"variable": [
+										{
+											"key": "folder_id",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Files - Create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/home/luis/src/clicksign/ruby-dev-test-1/test/fixtures/files/one.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/folders/:folder_id/files",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"folders",
+										":folder_id",
+										"files"
+									],
+									"variable": [
+										{
+											"key": "folder_id",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Files - Destroy",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/folders/:folder_id/files/:id",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"folders",
+										":folder_id",
+										"files",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "folder_id",
+											"value": "3"
+										},
+										{
+											"key": "id",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Folder - Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"folder_id\": 2,\n    \"label\": \"videos\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/folders",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"folders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Folder - Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"label\": \"Videos\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/folders/:id",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"folders",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Folder - Root List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/folders",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"folders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Folder - Childers List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/folders/:id",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"folders",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http://localhost:3000",
+			"type": "default"
+		}
+	]
+}
